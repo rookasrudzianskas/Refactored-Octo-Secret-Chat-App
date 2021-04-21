@@ -52,32 +52,31 @@ const Messages = () => {
 
     }, [chatId]);
 
-    const handleLikes = useCallback(async (msgId) => {
+    const handleLikes = useCallback(async msgId => {
         const { uid } = auth.currentUser;
         const messageRef = database.ref(`/messages/${msgId}`);
 
         let alertMsg;
 
         await messageRef.transaction(msg => {
-
             if (msg) {
                 if (msg.likes && msg.likes[uid]) {
-                    msg.likesCount -= 1;
-                    msg.likes[uid] = null
-                    alertMsg = 'Like removed'
+                    msg.likeCount -= 1;
+                    msg.likes[uid] = null;
+                    alertMsg = 'Like removed';
                 } else {
-                    msg.likesCount += 1;
+                    msg.likeCount += 1;
 
-                    if(!msg.likes) {
+                    if (!msg.likes) {
                         msg.likes = {};
                     }
 
                     msg.likes[uid] = true;
-                    alertMsg = 'Like added'
+                    alertMsg = 'Like added';
                 }
             }
-            return msg;
 
+            return msg;
         });
 
         Alert.info(alertMsg, 4000);
