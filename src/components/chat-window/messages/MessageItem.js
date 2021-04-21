@@ -9,7 +9,7 @@ import {auth} from "../../../misc/firebase";
 import {useHover} from "../../../misc/custom-hooks";
 import IconBtnControl from "./IconBtnControl";
 
-const MessageItem = ({message, handleAdmin}) => {
+const MessageItem = ({message, handleAdmin, handleLike}) => {
 
     const {author, createdAt, text} = message;
     const [selfRef, isHovered] = useHover();
@@ -52,7 +52,7 @@ const MessageItem = ({message, handleAdmin}) => {
                     isVisible
                     iconName="heart"
                     tooltip="like this message"
-                    onClick={() => {}}
+                    onClick={() => handleLike(message.id)}
                     badgeContent={5}/>
             </div>
 
