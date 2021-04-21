@@ -40,4 +40,4 @@ const IconBtnControl = ({
     );
 };
 
-export default IconBtnControl; Icon control
+export default IconBtnControl;
