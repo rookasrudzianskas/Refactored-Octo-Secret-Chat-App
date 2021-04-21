@@ -25,17 +25,23 @@ const MessageItem = ({message, handleAdmin}) => {
                 <ProfileAvatar src={author.avatar} name={author.name} className="ml-1" size="xs" />
 
 
-                <ProfileInfoBtnModal profile={author} appearance="link" className="p-0 ml-1 text-black">
-                    {canGrantAdmin && (<Button block onClick={() => handleAdmin(author.uid)} color="blue">
-                            {isMsgAuthorAdmin ? 'Remove admin permission' : 'Give admin in this room'}
+                <ProfileInfoBtnModal
+                    profile={author}
+                    appearance="link"
+                    className="p-0 ml-1 text-black"
+                >
+                    {canGrantAdmin && (
+                        <Button block onClick={() => handleAdmin(author.uid)} color="blue">
+                            {isMsgAuthorAdmin
+                                ? 'Remove admin permission'
+                                : 'Give admin in this room'}
                         </Button>
                     )}
                 </ProfileInfoBtnModal>
-
-                <TimeAgo datetime={
-                    createdAt
-                }
-                 className="font-normal text-black-45 ml-2" />
+                <TimeAgo
+                    datetime={createdAt}
+                    className="font-normal text-black-45 ml-2"
+                />
             </div>
 
             <div>
