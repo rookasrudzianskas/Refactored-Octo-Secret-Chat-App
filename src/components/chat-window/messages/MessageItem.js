@@ -45,6 +45,13 @@ const MessageItem = ({message, handleAdmin}) => {
                     datetime={createdAt}
                     className="font-normal text-black-45 ml-2"
                 />
+
+                <IconBtnControl
+                    isVisible
+                    iconName="heart"
+                    tooltip="like this message"
+                    onClick={() => {}}
+                    badgeContent={5}/>
             </div>
 
             <div>
