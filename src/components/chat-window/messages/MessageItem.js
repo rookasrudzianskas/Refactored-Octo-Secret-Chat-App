@@ -7,6 +7,7 @@ import {Button} from "rsuite";
 import {useCurrentRoom} from "../../../context/current-room.context";
 import {auth} from "../../../misc/firebase";
 import {useHover} from "../../../misc/custom-hooks";
+import IconBtnControl from "./IconBtnControl";
 
 const MessageItem = ({message, handleAdmin}) => {
 
