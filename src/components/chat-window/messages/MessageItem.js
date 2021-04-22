@@ -14,13 +14,22 @@ const renderFileMessage = (file) => {
 
     if(file.contentType.includes('image')) {
 
-        return <div className="height-220">
-            <ImgBtnModal src={file.url} fileName={file.name} />
-        </div>
+            return (<div className="height-220">
+                <ImgBtnModal src={file.url} fileName={file.name} />
+            </div>
+        );
+    }
+
+    if(file.contentType.includes('audio')) {
+        return <audio controls>
+            <source src={file.url} type="audio/mp3" />
+            Your browser does not support audio elements
+        </audio>
     }
 
     return <a href={file.url}>Download {file.name}</a>
 }
+
 
 const MessageItem = ({message, handleAdmin, handleLike, handleDelete}) => {
 
