@@ -18,14 +18,16 @@ const ImgBtnModal = ({src, fileName}) => {
                         <img src={src} height="100%" width="100%" alt="file"/>
                     </div>
                 </Modal.Body>
+                // eslint-disable-next-line
                 <Modal.Footer>
+
                     <a href={src} target="_blank" rel="noopener norefferer">
                         View original
                     </a>
                 </Modal.Footer>
             </Modal>
         </>
-    )
+    );
 }
 
 export default ImgBtnModal;

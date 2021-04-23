@@ -22,13 +22,19 @@
       ".indexOn": "roomId",
       "$message_id": {
         ".read": "auth !== null",
-        ".write": "auth !== null",
+        ".write": "auth !== null"
       }
     },
     "status": {
       "$user_id": {
         ".read": "auth !== null",
-        ".write": "$user_id === auth.uid",
+        ".write": "$user_id === auth.uid"
+      }
+    },
+    "fcm_tokens": {
+      "$token_id": {
+        ".read": false,
+        ".write": "newData.val() === auth.uid"
       }
     },
     ".read": false,

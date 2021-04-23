@@ -75,6 +75,7 @@ export function useHover() {
                 node.removeEventListener("mouseout", handleMouseOut);
             };
         },
+        // eslint-disable-next-line
         [ref.current] // Recall only if ref changes
     );
     return [ref, value];
