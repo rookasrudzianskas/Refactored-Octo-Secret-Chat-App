@@ -6514,7 +6514,7 @@
     "winston-transport" "^4.4.0"
     "ws" "^7.2.3"
 
-"firebase@^8.1.2":
+"firebase@^8.4.1":
   "integrity" "sha512-PMDt9iU8ry5P7PSrGQ+72O1gkfa5rNAeybMZhP22nKOh40sVozSkcKGZAFumXog7tjlslHJhUEZgfZbKCNkC8Q=="
   "resolved" "https://registry.npmjs.org/firebase/-/firebase-8.4.1.tgz"
   "version" "8.4.1"
